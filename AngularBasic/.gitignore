@@ -1,7 +1,7 @@
 wwwroot/css
 wwwroot/app/**/*.js
-wwwroot/app/**/*.js.map
 wwwroot/app/**/*.css
 wwwroot/lib/**/*.js
 wwwroot/*.js
+wwwroot/**/*.map
 node_modules

@@ -5,7 +5,14 @@ System.config({
             defaultExtension: 'js'
         }
     },
-    map: { app: '../app' }
+    map: {
+        app: '../app',
+        text: '../app/text-loader'
+    },
+    meta: {
+        '*.css': { loader: 'text' },
+        '*.html': { loader: 'text' }
+    }
 })
 
 System.import('bundle').then(() => {
