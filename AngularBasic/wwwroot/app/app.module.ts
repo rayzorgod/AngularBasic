@@ -7,8 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { PageNotFoundComponent } from './errors/not-found.component'; 
+import { ProductListComponent } from './product/product-list.component';
+import { PageNotFoundComponent } from './errors/not-found.component';
+import { ProductFilterPipe } from './product/product-filter.pipe';
 
 import {
     ButtonModule,
@@ -41,9 +42,10 @@ const appRoutes: Routes = [
         TestComponent,
         ProductListComponent,
         PageNotFoundComponent,
+        ProductFilterPipe
     ],
     providers: [
-
+        
     ],
     bootstrap: [AppComponent]
 })

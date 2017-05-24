@@ -23,7 +23,7 @@
     <Content Update="wwwroot\app\product-list\home.component.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Update="wwwroot\app\product-list\product-list.component.ts">
+    <Content Update="wwwroot\app\product\product-list.component.ts">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
