@@ -3,5 +3,5 @@
     code: string;
     available: boolean;
     price: number;
-    rating: boolean;
+    rating: number;
 }

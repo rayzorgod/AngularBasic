@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
+import { StarComponent } from './shared/star.component';
 import { ProductListComponent } from './product/product-list.component';
 import { PageNotFoundComponent } from './errors/not-found.component';
 import { ProductFilterPipe } from './product/product-filter.pipe';
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
         TestComponent,
         ProductListComponent,
         PageNotFoundComponent,
+        StarComponent,
         ProductFilterPipe
     ],
     providers: [

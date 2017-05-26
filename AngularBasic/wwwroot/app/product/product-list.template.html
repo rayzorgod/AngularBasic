@@ -32,9 +32,7 @@
             <thead>
                 <tr>
                     <th>
-                        <button (click) ='toggleImage()'> 
-                        {{shownImage ? 'Hide' : 'Show'}} Image
-                        </button>
+                        <button pButton type="button" icon="fa-star" iconPos="left" (click)='toggleImage()' label="{{shownImage ? 'Hide' : 'Show'}} Image"></button>
                     </th>
                     <th>Product</th>
                     <th>Code</th>
@@ -52,7 +50,11 @@
                 <td>{{product.productCode | lowercase}}</td>
                 <td>{{product.releaseDate}}</td>
                 <td>{{product.price | currency:'USD' :true:'1.2-2'}}</td>
-                <td>{{product.starRating}}</td>
+                <td>
+                    <!--{{product.starRating | number}}-->
+                    <ai-star [rating]="product.starRating"
+                             (ratingClicked)="onRatingCicked($event)"></ai-star>                   
+                </td>
             </tr>
         </table>
     </div>

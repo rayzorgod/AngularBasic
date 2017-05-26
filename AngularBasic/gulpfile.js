@@ -58,6 +58,14 @@ var paths = {
             dest: "./css/lib"
         }
     ],
+    libfonts: [
+        {
+            src: [
+                "./node_modules/font-awesome/fonts/*"
+            ],
+            dest: "./fonts/lib"
+        }
+    ],
     modules: [ // This is for modules with multiple files that require each other, used when npm can't be used
         {
             name: 'zone.js',
@@ -174,6 +182,17 @@ gulp.task('libcss', function () {
     return merge(streams);
 })
 
+gulp.task('libfonts', function () {
+    var streams = []
+    for (let module of paths.libfonts) {
+        streams.push(
+            gulp.src(module.src)
+                .pipe(gulp.dest(path.join(paths.wwwroot, module.dest)))
+        );
+    }
+    return merge(streams);
+})
+
 gulp.task('modules', function () {
     var streams = []
     for (let module of paths.modules) {
@@ -241,7 +260,7 @@ gulp.task('typescript', function () {
 });
 
 gulp.task('fullvar', () => { global.full = true });
-gulp.task('copy', ['lib', 'libcss', 'npm', 'modules']);
+gulp.task('copy', ['lib', 'libcss', 'libfonts', 'npm', 'modules']);
 gulp.task('compile', callback => runSequence('copy', 'sass', callback));
 gulp.task('build', callback => runSequence('compile', 'bundle', callback));
 gulp.task('full', callback => runSequence('clean', 'compile', callback));
