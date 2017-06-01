@@ -32,6 +32,8 @@ export class ProductListComponent implements OnInit {
     imageMargin: number = 2;
     shownImage: boolean = false;
     listFilter: string;//= 'cart';
+    errorMessage: string;
+
     productss: IProduct2[] = [
         //{  //Grabbed from Service now.
         //    "productId": 2,
@@ -87,9 +89,13 @@ export class ProductListComponent implements OnInit {
         this.shownImage = !this.shownImage;
     }
 
-    ngOnInit(): void { //Greatlace to provide any componnent initialisation and retrieval in this Component Lifecycle Hook event.
+    ngOnInit(): void { //Great way to provide any componnent initialisation and retrieval in this Component Lifecycle Hook event.
         debugger;
-        this.productss = this._productService.getProducts();
+        //this.productss = this._productService.getProducts();
+       this._productService.getProducts()
+            .subscribe(products => this.productss = products,
+            error => this.errorMessage = <any> error);
+
         console.log('In OnInit');
     }
 

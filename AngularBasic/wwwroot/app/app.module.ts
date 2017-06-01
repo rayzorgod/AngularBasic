@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
         PanelModule,
         InputTextModule,
         DataTableModule,
-        FormsModule
+        FormsModule,
+        HttpModule
     ],
     declarations: [
         AppComponent,
