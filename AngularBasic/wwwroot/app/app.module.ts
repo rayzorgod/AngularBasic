@@ -12,6 +12,7 @@ import { StarComponent } from './shared/star.component';
 import { ProductListComponent } from './product/product-list.component';
 import { PageNotFoundComponent } from './errors/not-found.component';
 import { ProductFilterPipe } from './product/product-filter.pipe';
+import { ProductDetailComponent } from './product/product-detail.component';
 
 import {
     ButtonModule,
@@ -21,9 +22,11 @@ import {
 } from 'primeng/primeng';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'test', component: TestComponent },
-    { path: 'product-list', component: ProductListComponent },
+    { path: 'products', component: ProductListComponent },
+    { path: 'product/id', component: ProductDetailComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full'},
     { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -46,7 +49,8 @@ const appRoutes: Routes = [
         ProductListComponent,
         PageNotFoundComponent,
         StarComponent,
-        ProductFilterPipe
+        ProductFilterPipe,
+        ProductDetailComponent
     ],
     providers: [
         

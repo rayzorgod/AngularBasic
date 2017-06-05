@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import template from './app.template.html';
+import template from './app.component.html';
 import { ProductService } from './product/product-service'
 
 @Component({

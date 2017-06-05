@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import template from './product-list.template.html';
+import template from './product-list.component.html';
 import { IProduct } from './Product'
 import { IProduct2 } from './Product2'
 import { ProductService } from './product-service'
