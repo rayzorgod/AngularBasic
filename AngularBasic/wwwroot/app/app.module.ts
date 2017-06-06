@@ -10,9 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
 import { StarComponent } from './shared/star.component';
 import { ProductListComponent } from './product/product-list.component';
+import { ProductDetailComponent } from './product/product-detail.component';
 import { PageNotFoundComponent } from './errors/not-found.component';
 import { ProductFilterPipe } from './product/product-filter.pipe';
-import { ProductDetailComponent } from './product/product-detail.component';
+import { ProductDetailGuard } from './product/product-guard.service'
 
 import {
     ButtonModule,
@@ -25,7 +26,11 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'test', component: TestComponent },
     { path: 'products', component: ProductListComponent },
-    { path: 'product/id', component: ProductDetailComponent },
+    {
+        path: 'product/:id',
+        canActivate: [ProductDetailGuard],
+        component: ProductDetailComponent
+    },
     { path: '', redirectTo: 'home', pathMatch: 'full'},
     { path: '**', component: PageNotFoundComponent }
 ];
@@ -53,7 +58,7 @@ const appRoutes: Routes = [
         ProductDetailComponent
     ],
     providers: [
-        
+        ProductDetailGuard
     ],
     bootstrap: [AppComponent]
 })
