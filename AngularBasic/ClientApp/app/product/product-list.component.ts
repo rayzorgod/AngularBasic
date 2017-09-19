@@ -19,7 +19,7 @@ class MyProduct implements IProduct {
 
 @Component({
     selector: "pm-products",
-    templateUrl: "./product-list.component.html",
+    templateUrl: "./product-list.template.html",
     styleUrls: ["./product-list.component.scss"],
 })
 export class ProductListComponent implements OnInit {
