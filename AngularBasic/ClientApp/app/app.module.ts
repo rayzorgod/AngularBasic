@@ -12,7 +12,7 @@ import { TestComponent } from "./test/test.component";
 
 import { ProductModule } from "./product/product.module";
 
-import { MdButtonModule, MdSliderModule } from "@angular/material";
+import { MatButtonModule, MatSliderModule } from "@angular/material";
 
 import { ButtonModule } from "primeng/primeng";
 
@@ -30,8 +30,8 @@ import { CovalentDialogsModule } from "@covalent/core";
         FormsModule,
         HttpModule,
         ButtonModule,
-        MdButtonModule,
-        MdSliderModule,
+        MatButtonModule,
+        MatSliderModule,
         CovalentDialogsModule,
         ProductModule,
     ],
